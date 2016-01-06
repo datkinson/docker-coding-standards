@@ -21,6 +21,12 @@ Name the container "coding-standards" for easy docker management and removal (yo
 
 Use the version of coding-standards in the drp docker registry
 
+#### Example ####
+
+Example of running this on a laravel project from the directory of the project:
+```bash
+docker run -it -v `pwd`:/var/www --rm --name coding-standards registry.drp.digital/coding-standards phpcs --standard=psr2 ./app -p --colors --ignore='*/*.blade.php
+```
 
 ### Notes ###
 
