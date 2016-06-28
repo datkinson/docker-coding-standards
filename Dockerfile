@@ -22,6 +22,7 @@ RUN yum install -y \
   git \
   vim \
   tar \
+  npm \
 && yum groupinstall -y "Development Tools"
 
 # install composer
@@ -31,6 +32,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --fil
 RUN composer global require "squizlabs/php_codesniffer=*"
 # install php mess detector
 RUN composer global require "phpmd/phpmd=*"
+# install semistandard
+RUN npm install -g semistandard
 
 # make sure composer vendors are in PATH
 ENV PATH /root/.composer/vendor/bin:$PATH
