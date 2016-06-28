@@ -12,7 +12,7 @@ By default this will just give you a shell to do whatever you like in.
 For actual testing you will have to replace the brackets at the end of the command with the command and options you wish to use for testing.
 
 ```bash
-docker run -it -v `pwd`:/var/www --rm --name coding-standards registry.drp.digital/coding-standards <command to run to test code>
+docker run -it -v `pwd`:/var/www --rm --name coding-standards hourd/coding-standards <command to run to test code>
 ```
 
 This will mount your current working directory inside the container,
@@ -25,7 +25,7 @@ Use the version of coding-standards in the drp docker registry
 
 Example of running this on a laravel project from the directory of the project:
 ```bash
-docker run -it -v `pwd`:/var/www --rm --name coding-standards registry.drp.digital/coding-standards phpcs --standard=psr2 ./app -p --colors --ignore='*/*.blade.php
+docker run -it -v `pwd`:/var/www --rm --name coding-standards hourd/coding-standards phpcs --standard=psr2 ./app -p --colors --ignore='*/*.blade.php
 ```
 
 ### Notes ###
